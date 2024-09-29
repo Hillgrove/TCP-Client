@@ -8,8 +8,7 @@ NetworkStream ns = socket.GetStream();
 StreamReader reader = new StreamReader(ns);
 StreamWriter writer = new StreamWriter(ns);
 
-bool keepSending = true;
-while (keepSending)
+while (socket.Connected)
 {
     string message = Console.ReadLine();
     writer.WriteLine(message);
@@ -20,8 +19,6 @@ while (keepSending)
 
     if (message.ToLower() == "stop")
     {
-        keepSending = false;
+        socket.Close();
     }
 }
-
-socket.Close();
