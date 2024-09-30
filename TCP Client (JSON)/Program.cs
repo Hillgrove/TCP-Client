@@ -12,7 +12,6 @@ StreamWriter writer = new StreamWriter(ns) { AutoFlush = true };
 while (socket.Connected)
 {
     // Prompt user for method
-    //Console.WriteLine("Enter method (random, add, subtract, stop):");
     string method = Console.ReadLine().Trim().ToLower();
 
     int numberX = 0;
